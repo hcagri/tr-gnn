@@ -1,0 +1,51 @@
+
+num_transformer_enc_layers: 1
+num_joint_enc_layers: 3
+
+edge_enc:
+    input_dim: 7
+    fc_dims: [18, 16]
+    dropout_p: 0
+    use_layernorm: False
+
+node_enc:
+    input_dim: 9
+    fc_dims: [64, 32]
+    dropout_p: 0
+    use_layernorm: False
+
+pos_enc:
+    d_model: 32
+    dropout: 0.05
+    max_len: 128
+
+transformer_params:
+    d_model: 32
+    nhead: 2
+    dim_feedforward: 128
+    batch_first: True
+    norm_first: True
+
+GATv2ConvMOT_params: 
+    in_channels: 32
+    out_channels: 16
+    heads: 2
+    concat: True
+    negative_slope: 0.1
+    dropout: 0
+    edge_dim: 16 
+    share_weights: True
+
+edge_conv_params:
+    in_channels: 48
+    out_channels: 16
+
+matcher_params:
+    dim: 32
+    logaritmic: False
+
+classifier_params: 
+    input_dim: 48
+    fc_dims: [16, 1]
+    dropout_p: 0
+    use_layernorm: False
